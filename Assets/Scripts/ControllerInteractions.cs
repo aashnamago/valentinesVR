@@ -56,7 +56,10 @@ public class ControllerInteractions : MonoBehaviour {
     }
 
     void pullObject (int device_index) {
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 500, Color.red, 10.0f);
+        Vector3 position = SteamVR_Controller.Input(device_index).transform.pos;
+        Vector3 direction = SteamVR_Controller.Input(device_index).transform.rot * position;
+
+        Debug.DrawRay(transform.position, transform.forward, Color.red);
       //  Instantiate(prefab, transform.position, Quaternion.identity);
         string toPrint = "hi";
         if (device_index == rightIndex) toPrint = "right";
