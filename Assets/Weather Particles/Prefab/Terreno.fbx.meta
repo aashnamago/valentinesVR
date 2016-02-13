@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: dd0da2f875ff3dd49a9756afbc0b8fef
+timeCreated: 1445466924
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Arbol
+    100002: Arbol 2
+    100004: Arbol 2.001
+    100006: Arbol 2.002
+    100008: Arbol 2.003
+    100010: Arbol 2.004
+    100012: Arbol 2.005
+    100014: Arbol 2.006
+    100016: Arbol 2.007
+    100018: Arbol 2.008
+    100020: Arbol 2.009
+    100022: Arbol 2.010
+    100024: Arbol 2.011
+    100026: Arbol 2.012
+    100028: Arbol 2.013
+    100030: Arbol.001
+    100032: Arbol.002
+    100034: Arbol.003
+    100036: Arbol.004
+    100038: Arbol.005
+    100040: Arbol.006
+    100042: Arbol.007
+    100044: Arbol.008
+    100046: Arbol.009
+    100048: Arbol.010
+    100050: Arbol.011
+    100052: Arbol.012
+    100054: Arbol.013
+    100056: Arbol.014
+    100058: Arbol.015
+    100060: Arbol.016
+    100062: Icosphere.000
+    100064: Icosphere.001
+    100066: Icosphere.002
+    100068: //RootNode
+    100070: Terreno
+    400000: Arbol
+    400002: Arbol 2
+    400004: Arbol 2.001
+    400006: Arbol 2.002
+    400008: Arbol 2.003
+    400010: Arbol 2.004
+    400012: Arbol 2.005
+    400014: Arbol 2.006
+    400016: Arbol 2.007
+    400018: Arbol 2.008
+    400020: Arbol 2.009
+    400022: Arbol 2.010
+    400024: Arbol 2.011
+    400026: Arbol 2.012
+    400028: Arbol 2.013
+    400030: Arbol.001
+    400032: Arbol.002
+    400034: Arbol.003
+    400036: Arbol.004
+    400038: Arbol.005
+    400040: Arbol.006
+    400042: Arbol.007
+    400044: Arbol.008
+    400046: Arbol.009
+    400048: Arbol.010
+    400050: Arbol.011
+    400052: Arbol.012
+    400054: Arbol.013
+    400056: Arbol.014
+    400058: Arbol.015
+    400060: Arbol.016
+    400062: Icosphere.000
+    400064: Icosphere.001
+    400066: Icosphere.002
+    400068: Terreno
+    400070: //RootNode
+    2300000: Arbol
+    2300002: Arbol 2
+    2300004: Arbol 2.001
+    2300006: Arbol 2.002
+    2300008: Arbol 2.003
+    2300010: Arbol 2.004
+    2300012: Arbol 2.005
+    2300014: Arbol 2.006
+    2300016: Arbol 2.007
+    2300018: Arbol 2.008
+    2300020: Arbol 2.009
+    2300022: Arbol 2.010
+    2300024: Arbol 2.011
+    2300026: Arbol 2.012
+    2300028: Arbol 2.013
+    2300030: Arbol.001
+    2300032: Arbol.002
+    2300034: Arbol.003
+    2300036: Arbol.004
+    2300038: Arbol.005
+    2300040: Arbol.006
+    2300042: Arbol.007
+    2300044: Arbol.008
+    2300046: Arbol.009
+    2300048: Arbol.010
+    2300050: Arbol.011
+    2300052: Arbol.012
+    2300054: Arbol.013
+    2300056: Arbol.014
+    2300058: Arbol.015
+    2300060: Arbol.016
+    2300062: Icosphere.000
+    2300064: Icosphere.001
+    2300066: Icosphere.002
+    2300068: Terreno
+    3300000: Arbol
+    3300002: Arbol 2
+    3300004: Arbol 2.001
+    3300006: Arbol 2.002
+    3300008: Arbol 2.003
+    3300010: Arbol 2.004
+    3300012: Arbol 2.005
+    3300014: Arbol 2.006
+    3300016: Arbol 2.007
+    3300018: Arbol 2.008
+    3300020: Arbol 2.009
+    3300022: Arbol 2.010
+    3300024: Arbol 2.011
+    3300026: Arbol 2.012
+    3300028: Arbol 2.013
+    3300030: Arbol.001
+    3300032: Arbol.002
+    3300034: Arbol.003
+    3300036: Arbol.004
+    3300038: Arbol.005
+    3300040: Arbol.006
+    3300042: Arbol.007
+    3300044: Arbol.008
+    3300046: Arbol.009
+    3300048: Arbol.010
+    3300050: Arbol.011
+    3300052: Arbol.012
+    3300054: Arbol.013
+    3300056: Arbol.014
+    3300058: Arbol.015
+    3300060: Arbol.016
+    3300062: Icosphere.000
+    3300064: Icosphere.001
+    3300066: Icosphere.002
+    3300068: Terreno
+    4300000: Icosphere.001
+    4300002: Icosphere.000
+    4300004: Icosphere.002
+    4300006: Arbol.016
+    4300008: Arbol.015
+    4300010: Arbol.014
+    4300012: Arbol.013
+    4300014: Arbol.012
+    4300016: Arbol.011
+    4300018: Arbol.010
+    4300020: Arbol.009
+    4300022: Arbol.008
+    4300024: Arbol.007
+    4300026: Arbol.006
+    4300028: Arbol.005
+    4300030: Arbol.004
+    4300032: Arbol.003
+    4300034: Arbol.002
+    4300036: Arbol.001
+    4300038: Arbol 2.013
+    4300040: Arbol 2.012
+    4300042: Arbol 2.011
+    4300044: Arbol 2.010
+    4300046: Arbol 2.009
+    4300048: Arbol 2.008
+    4300050: Arbol 2.007
+    4300052: Arbol 2.006
+    4300054: Arbol 2.005
+    4300056: Arbol 2.004
+    4300058: Arbol 2.003
+    4300060: Arbol 2.002
+    4300062: Arbol 2.001
+    4300064: Arbol 2
+    4300066: Arbol
+    4300068: Terreno
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
