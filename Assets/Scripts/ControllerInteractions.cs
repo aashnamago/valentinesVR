@@ -4,11 +4,11 @@ using System.Collections;
 
 public class ControllerInteractions : MonoBehaviour {
     int leftIndex, rightIndex;
-    Transform rightLinked;
-    Transform leftLinked;
-    bool right;
-    bool left;
-    public Transform prefab;
+    Transform rightLinked; // TODO
+    Transform leftLinked; // TODO
+    bool right; // TEMPORARY
+    bool left; // TEMPORARY
+  
 
     void Start() {
         leftIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
