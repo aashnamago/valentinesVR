@@ -11,6 +11,9 @@ Temp
 
 Library/*
 
+Assembly-CSharpy-Editor.csproj
+Assembly-CSharp-firstpass.csproj
+Assembly-CSharp.csproj
 AnnotationManager
 assetDatabase3
 AssetImportState

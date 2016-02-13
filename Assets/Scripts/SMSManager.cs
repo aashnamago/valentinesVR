@@ -34,9 +34,9 @@ public class SMSManager : MonoBehaviour {
 			Instance = this;
 
 		//Test Script
-		//ParseData (ParseKey + "5.3:BELMONT:ECKE #cv:h test lol\n jkWordpinch" + ParseKey + "6:SAN FRAN:sdf:asdf:sdfDFg'fasf\nsdfnbjsdfs");
+		ParseData (ParseKey + "5.3:BELMONT:ECKE #cv:h test lol\n jkWordpinch" + ParseKey + "6:SAN FRAN:sdf:asdf:sdfDFg'fasf\nsdfnbjsdfs");
 
-		StartCoroutine (GetTextsPeriodically ());
+		//StartCoroutine (GetTextsPeriodically ());
 
 	}
 
