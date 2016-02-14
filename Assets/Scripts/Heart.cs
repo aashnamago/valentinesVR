@@ -21,13 +21,19 @@ public class Heart : MonoBehaviour {
     }
 
     public void SetSMSData(SMSManager.SMSData data) {
-        //	GetComponentInChildren<Text> ().text = data.body + "\n" + "From: " + data.city;
-        //	sentiment = data.sentiment;
+        GetComponentInChildren<Text> ().text = data.body + "\n" + "From: " + data.city;
+        sentiment = data.sentiment;
     }
 
     void OnTriggerEnter(Collider collide) {
-        if (collide.tag != "Heart")
+		if (collide.tag != "Heart" && collide.tag != "Player")
         {
+			if (sentiment > 0) {
+				GameManager.Instance.incrementHealth ();
+			} else {
+				GameManager.Instance.decrementHealth ();
+			}
+
             Destroy(this.gameObject);
             Instantiate(destructionPrefab, this.transform.position, Quaternion.identity);
         }
