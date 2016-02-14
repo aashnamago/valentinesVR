@@ -64,8 +64,7 @@ public class ControllerInteractions : MonoBehaviour {
     {
         Ray controller_direction = new Ray(controller.position, controller.forward);
         RaycastHit hit;
-        if (Physics.Raycast(controller_direction, out hit, Mathf.Infinity)) {
-            print("hit");
+        if (Physics.Raycast(controller_direction, out hit, Mathf.Infinity) && hit.transform.tag == "Heart") {
             if (right)
             {
                 right_line_renderer.enabled = true;
@@ -88,9 +87,6 @@ public class ControllerInteractions : MonoBehaviour {
             left_line_renderer.SetPosition(0, left_controller.position);
             left_line_renderer.SetPosition(1, hit.point);
             left_offset = hit.point - left_linked.position;
-        } else
-        {
-            print("didn't hit");
         }
     }
 

@@ -6,9 +6,10 @@ public class Heart : MonoBehaviour {
 
     public int size;
 
-    public GameObject destructionPrefab;
+    public GameObject badDestructionPrefab;
+    public GameObject goodDestructionPrefab;
 
-	private GameObject player;
+    private GameObject player;
     private float sentiment;
 
     // Use this for initialization
@@ -31,12 +32,27 @@ public class Heart : MonoBehaviour {
         {
 			if (sentiment > 0) {
 				GameManager.Instance.incrementHealth ();
+                Instantiate(goodDestructionPrefab, this.transform.position, Quaternion.identity);
 			} else {
 				GameManager.Instance.decrementHealth ();
-			}
+                Instantiate(badDestructionPrefab, this.transform.position, Quaternion.identity);
+            }
 				
             Destroy(this.gameObject);
-            Instantiate(destructionPrefab, this.transform.position, Quaternion.identity);
+           
+        }
+
+        if (collide.tag == "Bonfire")
+        {
+            if (sentiment < 0)
+            {
+                GameManager.Instance.incrementHealth();
+            } else
+            {
+                GameManager.Instance.decrementHealth();
+            }
+
+            Destroy(this.gameObject);
         }
 
     }
