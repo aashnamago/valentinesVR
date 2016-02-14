@@ -6,8 +6,7 @@ public class GameManager : MonoBehaviour {
 	public Vector3 SpawnPoint = Vector3.zero;
 	public float SpawnRadius = 10f;
 
-	[HideInInspector]
-	public int gameHealth = 0;
+	public int gameHealth;
 	private int incrementAmount = 5;
 	private int decrementAmount = -5;
 
@@ -26,6 +25,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		gameHealth = 50;
 		StartCoroutine (SpawnHearts ());
 	}
 	
