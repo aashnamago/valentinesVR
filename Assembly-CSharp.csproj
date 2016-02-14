@@ -97,6 +97,7 @@
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_TestController.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedObject.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
+     <Compile Include="Assets\UnionAssetes\Particle\ParticleScaler\ParticleScale.cs" />
      <None Include="Assets\Raving Bots\Shaders\Cartoon Explosion Ring Particle.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_BlitFlip.shader" />
