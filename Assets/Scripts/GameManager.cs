@@ -6,9 +6,9 @@ public class GameManager : MonoBehaviour {
 	public Vector3 SpawnPoint = Vector3.zero;
 	public float SpawnRadius = 10f;
 
-	public int gameHealth = 0;
-	public int incrementAmount;
-	public int decrementAmount;
+	//public int gameHealth = 0;
+	//public int incrementAmount;
+	//public int decrementAmount;
 
 	//in seconds
 	public float minWaitTime = .3f;
@@ -48,14 +48,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void decrementHealth() {
-		gameHealth += decrementAmount;
-		if (gameHealth < 0)
-			gameHealth = 0;
+		//gameHealth += decrementAmount;
+		//if (gameHealth < 0)
+		//	gameHealth = 0;
 	}
 
 	public void incrementHealth() {
-		gameHealth += incrementAmount;
-		if (gameHealth > 100)
-			gameHealth = 100;
+		//gameHealth += incrementAmount;
+		//if (gameHealth > 100)
+		//	gameHealth = 100;
 	}
 }
