@@ -4,22 +4,33 @@ using System.Collections;
 
 public class Heart : MonoBehaviour {
 
-	public int size;
+    public int size;
 
-	private float sentiment;
+    public GameObject destructionPrefab;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    private float sentiment;
 
-	public void SetSMSData(SMSManager.SMSData data) {
-		GetComponentInChildren<Text> ().text = data.body + "\n" + "From: " + data.city;
-		sentiment = data.sentiment;
-	}
+    // Use this for initialization
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
+
+    public void SetSMSData(SMSManager.SMSData data) {
+        //	GetComponentInChildren<Text> ().text = data.body + "\n" + "From: " + data.city;
+        //	sentiment = data.sentiment;
+    }
+
+    void OnTriggerEnter(Collider collide) {
+        if (collide.tag != "Heart")
+        {
+            Destroy(this.gameObject);
+            Instantiate(destructionPrefab, this.transform.position, Quaternion.identity);
+        }
+
+    }
 }

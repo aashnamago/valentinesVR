@@ -26,8 +26,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public Heart CreateHeart() {
-		SMSManager.SMSData data = SMSManager.Instance.GetRandomSMS ();
-		if (data != null) {
+        SMSManager.SMSData data = new SMSManager.SMSData(0, "asdfa", "Hello World");
+        //SMSManager.SMSData data = SMSManager.Instance.GetRandomSMS ();
+        if (data != null) {
 			Vector3 location = (new Vector3 (Random.Range (-1f, 1f), 0f, Random.Range (-1f, 1f))).normalized * SpawnRadius + SpawnPoint; 
 			Heart heart = (Instantiate (HeartPrefab.gameObject, location, Quaternion.identity) as GameObject).GetComponent<Heart> ();
 			heart.SetSMSData (SMSManager.Instance.GetRandomSMS ());
