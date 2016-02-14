@@ -33,7 +33,7 @@ public class Heart : MonoBehaviour {
 			} else {
 				GameManager.Instance.decrementHealth ();
 			}
-
+				
             Destroy(this.gameObject);
             Instantiate(destructionPrefab, this.transform.position, Quaternion.identity);
         }
