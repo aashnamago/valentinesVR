@@ -6,15 +6,16 @@ public class GameManager : MonoBehaviour {
 	public Vector3 SpawnPoint = Vector3.zero;
 	public float SpawnRadius = 10f;
 
-	//public int gameHealth = 0;
-	//public int incrementAmount;
-	//public int decrementAmount;
+	[HideInInspector]
+	public int gameHealth = 0;
+	private int incrementAmount = 5;
+	private int decrementAmount = -5;
 
 	//in seconds
 	public float minWaitTime = .3f;
 	public float maxWaitTime = 1.2f;
 
-	public Heart HeartPrefab;
+	public GameObject HeartPrefab;
 
 	public static GameManager Instance;
 
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour {
         SMSManager.SMSData data = SMSManager.Instance.GetRandomSMS ();
         if (data != null) {
 			Vector3 location = (new Vector3 (Random.Range (-1f, 1f), 0f, Random.Range (-1f, 1f))).normalized * SpawnRadius + SpawnPoint; 
-			Heart heart = (Instantiate (HeartPrefab.gameObject, location, Quaternion.identity) as GameObject).GetComponent<Heart> ();
+			Heart heart = (Instantiate (HeartPrefab, location, Quaternion.identity) as GameObject).GetComponentInChildren<Heart> ();
 			heart.SetSMSData (data);
 			return heart;
 		}
@@ -48,14 +49,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void decrementHealth() {
-		//gameHealth += decrementAmount;
-		//if (gameHealth < 0)
-		//	gameHealth = 0;
+		gameHealth += decrementAmount;
+		if (gameHealth < 0)
+			gameHealth = 0;
 	}
 
 	public void incrementHealth() {
-		//gameHealth += incrementAmount;
-		//if (gameHealth > 100)
-		//	gameHealth = 100;
+		gameHealth += incrementAmount;
+		if (gameHealth > 100)
+			gameHealth = 100;
 	}
 }
