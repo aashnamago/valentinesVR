@@ -8,6 +8,17 @@ public class SMSManager : MonoBehaviour {
 	public const float PingWaitTime = 10f;
 
 	public const string url = "http://stupidcupid.herokuapp.com/recent_notes";
+	string[] stock_valentines = new string[] {
+		"LoveNote2254-0.3:Palo Alto:You are my third favorite mammal after dogs and cats...", 
+		"LoveNote2254-0.5:San Francisco:You're only good for your Netflix account.", 
+		"LoveNote2254-0.1:Stanford:I don't dislike you.",
+		"LoveNote2254-0.1:Menlo Park:Beggars can't be choosers.",
+		"LoveNote22540.0:Redwood City:Netflix and chill?.",
+		"LoveNote22540.9:Stanford:I wish I could feel the magic of meeting you again every day",
+		"LoveNote22540.7:Stanford:You are important to me",
+		"LoveNote22540.5:Stanford:In your smile I see something more beautiful than the stars"
+	};
+
 
 	public static SMSManager Instance;
 
@@ -33,11 +44,11 @@ public class SMSManager : MonoBehaviour {
 		if (Instance == null)
 			Instance = this;
 
-		//Test Script
-		ParseData (ParseKey + "5.3:BELMONT:ECKE #cv:h test lol\n jkWordpinch" + ParseKey + "6:SAN FRAN:sdf:asdf:sdfDFg'fasf\nsdfnbjsdfs");
+		for (int i = 0; i < stock_valentines.Length; i++) {
+			ParseData (stock_valentines [i]);
+		}
 
-		//StartCoroutine (GetTextsPeriodically ());
-
+		StartCoroutine (GetTextsPeriodically ());
 	}
 
 	void OnDestroy() {
@@ -62,7 +73,7 @@ public class SMSManager : MonoBehaviour {
 			string[] messageSplit = text.Split (new char[] { ':' }, 3);
 			SMSData sData = new SMSData (float.Parse (messageSplit [0]), messageSplit [1], messageSplit [2]);
 			unusedTexts.Add (sData);
-			Debug.LogError (sData.ToString());
+			//Debug.LogError (sData.ToString());
 		}
 	}
 
@@ -73,7 +84,6 @@ public class SMSManager : MonoBehaviour {
 			unusedTexts.RemoveAt (index);
 			return sData;
 		}
-
 		return null;
 	}
 }
