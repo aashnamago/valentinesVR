@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class SMSManager : MonoBehaviour {
 	public const string ParseKey = "LoveNote2254";
-	public const float PingWaitTime = 10f;
+	public const float PingWaitTime = 5f;
 
 	public const string url = "http://stupidcupid.herokuapp.com/recent_notes";
 	string[] stock_valentines = new string[] {
