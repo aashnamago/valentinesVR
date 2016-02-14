@@ -9,14 +9,14 @@ public class SMSManager : MonoBehaviour {
 
 	public const string url = "http://stupidcupid.herokuapp.com/recent_notes";
 	string[] stock_valentines = new string[] {
-		"LoveNote22540:-0.3:Palo Alto:You are my third favorite mammal after dogs and cats...", 
+		"LoveNote22540:-0.9:Palo Alto:You are my third favorite mammal after dogs and cats...", 
 		"LoveNote22540:-0.5:San Francisco:You're only good for your Netflix account.",
-		"LoveNote22540:-0.1:Stanford:I don't dislike you.",
+		"LoveNote22540:-0.3:Stanford:I don't dislike you.",
 		"LoveNote22540:-0.1:Menlo Park:Beggars can't be choosers.",
-		"LoveNote22540:0.0:Redwood City:Netflix and chill?.",
+		"LoveNote22540:0.2:Redwood City:Netflix and chill?.",
 		"LoveNote22540:0.9:Stanford:I wish I could feel the magic of meeting you again every day",
-		"LoveNote22540:0.7:Stanford:You are important to me",
-		"LoveNote22540:0.5:Stanford:In your smile I see something more beautiful than the stars"
+		"LoveNote22540:0.4:Stanford:You are important to me",
+		"LoveNote22540:0.7:Stanford:In your smile I see something more beautiful than the stars"
 	};
 
 

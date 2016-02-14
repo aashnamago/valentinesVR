@@ -44,7 +44,7 @@ public class LevelManager : MonoBehaviour {
 		Renderer[] rends = forest.GetComponentsInChildren<Renderer> ();
 		for (float f = 1f; f >= 0f; f -= FadeIncrement){
 			foreach(Renderer r in rends) {
-				Color c = r.material.color;
+                Color c = r.material.color;
 				c.a = f;
 				r.material.color = c;
 			}
