@@ -58,14 +58,14 @@ public class Heart : MonoBehaviour {
 
     public void SwitchLevel() {
         if (sentiment > .6)
-            LevelManager.Instance.SwitchToScene(0);
+            LevelManager.Instance.SwitchToScene(4);
         else if (sentiment > .2)
-            LevelManager.Instance.SwitchToScene(1);
+            LevelManager.Instance.SwitchToScene(3);
         else if (sentiment > -.2)
             LevelManager.Instance.SwitchToScene(2);
         else if (sentiment > -.6)
-            LevelManager.Instance.SwitchToScene(3);
+            LevelManager.Instance.SwitchToScene(1);
         else
-            LevelManager.Instance.SwitchToScene(4);
+            LevelManager.Instance.SwitchToScene(0);
     }
 }
