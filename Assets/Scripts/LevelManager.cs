@@ -33,10 +33,10 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//int currForest = (int) ( (float) GameManager.Instance.gameHealth / 20f);
+        //int currForest = (int) ( (float) GameManager.Instance.gameHealth / 20f);
         //Debug.LogError (GameManager.Instance.gameHealth);
         //SwitchToScene(currForest);
-	}
+    }
 
 	IEnumerator FadeForestOut(GameObject forest) {
 		forest.GetComponentInChildren<Light> ().enabled = true;
