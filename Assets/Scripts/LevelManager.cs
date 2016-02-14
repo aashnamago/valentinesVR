@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour {
     }
 
 	IEnumerator FadeForestOut(GameObject forest) {
-		forest.GetComponentInChildren<Light> ().enabled = true;
+		//forest.GetComponentInChildren<Light> ().enabled = true;
 
 		Renderer[] rends = forest.GetComponentsInChildren<Renderer> ();
 		for (float f = 1f; f >= 0f; f -= FadeIncrement){
@@ -52,12 +52,12 @@ public class LevelManager : MonoBehaviour {
 			yield return new WaitForFixedUpdate ();
 		}
 
-		forest.GetComponentInChildren<Light> ().enabled = false;
+		//forest.GetComponentInChildren<Light> ().enabled = false;
 		forest.SetActive (false);
 	}
 
 	IEnumerator FadeForestIn(GameObject forest) {
-		forest.GetComponentInChildren<Light> ().enabled = false;
+		//forest.GetComponentInChildren<Light> ().enabled = false;
 		forest.SetActive (true);
 
 		Renderer[] rends = forest.GetComponentsInChildren<Renderer> ();
@@ -71,7 +71,7 @@ public class LevelManager : MonoBehaviour {
 			yield return new WaitForFixedUpdate ();
 		}
 
-		forest.GetComponentInChildren<Light> ().enabled = true;
+		//forest.GetComponentInChildren<Light> ().enabled = true;
 	}
 
     public void SwitchToScene(int scene)
