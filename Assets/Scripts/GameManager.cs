@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour {
 	public float SpawnRadius = 10f;
 
 	public int gameHealth;
-	private int incrementAmount = 5;
-	private int decrementAmount = -5;
+	private int incrementAmount = 2;
+	private int decrementAmount = -2;
 
 	//in seconds
 	public float minWaitTime = .3f;
