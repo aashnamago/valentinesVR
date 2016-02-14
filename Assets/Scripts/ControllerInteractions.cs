@@ -3,71 +3,74 @@ using System.Collections;
 
 
 public class ControllerInteractions : MonoBehaviour {
-    int leftIndex, rightIndex;
-    Transform rightLinked; // TODO
-    Transform leftLinked; // TODO
-    bool right; // TEMPORARY
-    bool left; // TEMPORARY
-  
+    int left_index, right_index;
+    Transform right_linked, left_linked;
+    public Transform right_controller, left_controller;
 
     void Start() {
-        leftIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
-        rightIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
-        right = false;
-        left = false;
+        left_index = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
+        right_index = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
+        right_linked = null;
+        left_linked = null;
     }
 
     // Update is called once per frame
     void Update() {
         /* TODO: Let go of any released objects */
+        if (right_index != -1 && SteamVR_Controller.Input(right_index).GetPressUp(SteamVR_Controller.ButtonMask.Trigger) && right_linked != null)
+            releaseObject(right_linked, true);
 
+        if (left_index != -1 && SteamVR_Controller.Input(left_index).GetPressUp(SteamVR_Controller.ButtonMask.Trigger) && left_linked != null)
+            releaseObject(left_linked, false);
 
         /* Link to any new objects */
-        if (rightIndex != -1 && SteamVR_Controller.Input(rightIndex).GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
-            linkObject(rightIndex);
-            
-        if (leftIndex != -1 && SteamVR_Controller.Input(leftIndex).GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
-            linkObject(leftIndex);
+        if (right_index != -1 && SteamVR_Controller.Input(right_index).GetPressDown(SteamVR_Controller.ButtonMask.Trigger) && right_linked == null)
+            linkObject(right_controller, true);
+
+        if (left_index != -1 && SteamVR_Controller.Input(left_index).GetPressDown(SteamVR_Controller.ButtonMask.Trigger) && left_linked == null)
+            linkObject(left_controller, false);
 
         /* TODO: Update position of any previously linked objects */
-        if (right) pullObject(rightIndex);
-        if (left) pullObject(leftIndex);
+       // if (right) pullObject(right_index); // TEMPORARY
+       // if (left) pullObject(left_index); // TEMPORARY
 
     }
 
-    void linkObject(int device_index)
+    void linkObject (Transform controller, bool right)
     {
-        if (device_index == rightIndex) right = true;
-        if (device_index == leftIndex) left = true;
+        Ray controller_direction = new Ray(controller.position, controller.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(controller_direction, out hit, 30000)) {
+            print("HIT " + hit.transform.name);
+            if (right)
+            {
+                right_linked = hit.transform;
+                right_linked.parent = right_controller;
+            }
+            else {
+                left_linked = hit.transform;
+                left_linked.parent = left_controller;
+            }
+        }
 
-
-        // figure out what you're pointing at, get that gameobject's transform
-        // highlight object
-        // set global... then in update, 
-        Vector3 position = SteamVR_Controller.Input(device_index).transform.pos;
-        Vector3 direction = SteamVR_Controller.Input(device_index).transform.rot * position;
-
-      //var fwd = transform.TransformDirection(Vector3.forward);
-     // if (Physics.Raycast(transform.position, fwd, 50))
-      //{
-      //    print("There is something in front of the object!");
-      //}
-       
-    }
+            // figure out what you're pointing at, get that gameobject's transform
+            // highlight object
+            // set global
+        }
 
     void pullObject (int device_index) {
-        Vector3 position = SteamVR_Controller.Input(device_index).transform.pos;
-        Vector3 direction = SteamVR_Controller.Input(device_index).transform.rot * position;
 
-        Debug.DrawRay(transform.position, transform.forward, Color.red);
-      //  Instantiate(prefab, transform.position, Quaternion.identity);
-        string toPrint = "hi";
-        if (device_index == rightIndex) toPrint = "right";
-        if (device_index == leftIndex) toPrint = "left";
-        print("Something is happening with " + toPrint);
+
     }
 
-
+    void releaseObject (Transform linked_object, bool right)
+    {
+        linked_object.parent = null;
+        if (right)
+            right_linked = null;
+        else
+            left_linked = null;
+    }
     // TODO: make tree come towards me
     // TODO: add haptic feedback
 
