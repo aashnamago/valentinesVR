@@ -7,12 +7,16 @@ public class GameManager : MonoBehaviour {
 	public float SpawnRadius = 10f;
 
 	public int gameHealth;
-	private int incrementAmount = 2;
+	private int incrementAmount = 5;
 	private int decrementAmount = -2;
 
 	//in seconds
-	public float minWaitTime = .3f;
-	public float maxWaitTime = 1.2f;
+	private float minWaitTime = 6.0f;
+	private float maxWaitTime = 7.0f;
+
+	//game level info
+	private int cur_level = 0;
+	private float level_length = 15.0f;
 
 	public GameObject HeartPrefab;
 
@@ -26,9 +30,38 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameHealth = 50;
+		StartCoroutine (ChangeGameLevels ());
 		StartCoroutine (SpawnHearts ());
 	}
-	
+
+	IEnumerator ChangeGameLevels() {
+		while (true) {
+			yield return new WaitForSeconds (level_length);
+			cur_level++;
+			setTimes (cur_level);
+		}
+	}
+
+	void setTimes(int level) {
+		switch (level) {
+			case 1:
+				minWaitTime = 4.0f;
+				maxWaitTime = 5.0f;
+				level_length = 7.0f;
+				break;	
+			case 2:
+				minWaitTime = 2.0f;
+				maxWaitTime = 3.0f;
+				level_length = 4.0f;
+				break;
+			default:
+				minWaitTime = 1.0f;
+				maxWaitTime = 2.0f;
+				level_length = 4.0f;
+				break;
+		}
+	}
+		
 	IEnumerator SpawnHearts() {
 		while (true) {
 			CreateHeart ();

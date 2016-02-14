@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int currForest = (int) ( (float) GameManager.Instance.gameHealth / 20f);
-		Debug.LogError (GameManager.Instance.gameHealth);
+		//Debug.LogError (GameManager.Instance.gameHealth);
 		if (currForest != activeForest) {
 			StartCoroutine (FadeForestOut (Forests [activeForest]));
 			StartCoroutine (FadeForestIn (Forests [currForest]));
