@@ -50,6 +50,8 @@ public class ControllerInteractions : MonoBehaviour {
             updateTarget(right_controller, true);
         else if (right_index != -1 && SteamVR_Controller.Input(right_index).GetPressUp(SteamVR_Controller.ButtonMask.Trigger) && right_linked != null)   /* Let go of any released objects */
             releaseObject(right_linked, true);
+        else if (right_linked == null)
+            right_line_renderer.enabled = false;
 
 
         if (left_index != -1 && SteamVR_Controller.Input(left_index).GetPressDown(SteamVR_Controller.ButtonMask.Trigger) && left_linked == null) /* Link to any new objects */
@@ -58,6 +60,8 @@ public class ControllerInteractions : MonoBehaviour {
            updateTarget(left_controller, false);
         else if (left_index != -1 && SteamVR_Controller.Input(left_index).GetPressUp(SteamVR_Controller.ButtonMask.Trigger) && left_linked != null)   /* Let go of any released objects */
             releaseObject(left_linked, false);
+        else if (left_linked == null)
+            left_line_renderer.enabled = false;
     }
 
     void linkObject (Transform controller, bool right)
@@ -65,6 +69,8 @@ public class ControllerInteractions : MonoBehaviour {
         Ray controller_direction = new Ray(controller.position, controller.forward);
         RaycastHit hit;
         if (Physics.Raycast(controller_direction, out hit, Mathf.Infinity) && hit.transform.tag == "Heart") {
+            hit.transform.gameObject.GetComponent<Heart>().SwitchLevel();
+
             if (right)
             {
                 right_line_renderer.enabled = true;

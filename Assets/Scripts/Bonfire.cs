@@ -7,6 +7,7 @@ public class Bonfire : MonoBehaviour {
 
 	// Use this for initialization
 	void OnTriggerEnter () {
-        Instantiate(Explosion);
+
+        Instantiate(Explosion, new Vector3(0f, 2f, 0f) + transform.position , Quaternion.identity);
 	}
 }

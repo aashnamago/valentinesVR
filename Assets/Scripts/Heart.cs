@@ -4,8 +4,6 @@ using System.Collections;
 
 public class Heart : MonoBehaviour {
 
-    public int size;
-
     public GameObject badDestructionPrefab;
     public GameObject goodDestructionPrefab;
 
@@ -23,7 +21,9 @@ public class Heart : MonoBehaviour {
 	}
 
     public void SetSMSData(SMSManager.SMSData data) {
-        GetComponentInChildren<Text> ().text = data.body + "\n" + "From: " + data.city;
+        Text[] texts = GetComponentsInChildren<Text>();
+        foreach(Text t in texts)
+           t.text = data.body + "\n" + "From: " + data.city;
         sentiment = data.sentiment;
     }
 
@@ -54,6 +54,18 @@ public class Heart : MonoBehaviour {
 
             Destroy(this.gameObject);
         }
+    }
 
+    public void SwitchLevel() {
+        if (sentiment > .6)
+            LevelManager.Instance.SwitchToScene(0);
+        else if (sentiment > .2)
+            LevelManager.Instance.SwitchToScene(1);
+        else if (sentiment > -.2)
+            LevelManager.Instance.SwitchToScene(2);
+        else if (sentiment > -.6)
+            LevelManager.Instance.SwitchToScene(3);
+        else
+            LevelManager.Instance.SwitchToScene(4);
     }
 }

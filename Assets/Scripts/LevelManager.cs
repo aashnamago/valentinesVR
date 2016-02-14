@@ -9,11 +9,22 @@ public class LevelManager : MonoBehaviour {
 	public List<GameObject> Forests;
 	public int activeForest;
 
-	public Light dirLight;
-	public float[] directionLightRotations;
+    public static LevelManager Instance;
 
-	// Use this for initialization
-	void Start () {
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
+    void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
+
+    // Use this for initialization
+    void Start () {
 		for(int i = 0; i < Forests.Count; i++) {
 			if (Forests [i].activeInHierarchy)
 				activeForest = i;
@@ -22,13 +33,9 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		int currForest = (int) ( (float) GameManager.Instance.gameHealth / 20f);
-		Debug.LogError (GameManager.Instance.gameHealth);
-		if (currForest != activeForest) {
-			StartCoroutine (FadeForestOut (Forests [activeForest]));
-			StartCoroutine (FadeForestIn (Forests [currForest]));
-			activeForest = currForest;
-		}
+		//int currForest = (int) ( (float) GameManager.Instance.gameHealth / 20f);
+        //Debug.LogError (GameManager.Instance.gameHealth);
+        //SwitchToScene(currForest);
 	}
 
 	IEnumerator FadeForestOut(GameObject forest) {
@@ -66,4 +73,15 @@ public class LevelManager : MonoBehaviour {
 
 		forest.GetComponentInChildren<Light> ().enabled = true;
 	}
+
+    public void SwitchToScene(int scene)
+    {
+        if (scene != activeForest)
+        {
+            StartCoroutine(FadeForestOut(Forests[activeForest]));
+            StartCoroutine(FadeForestIn(Forests[scene]));
+            activeForest = scene;
+        }
+
+    }
 }
